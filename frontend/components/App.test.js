@@ -1,26 +1,238 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen, act } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import App from './App'
+import info from '../i18n/index'
+
+
+
 
 describe('Module 4 Project Tests', () => {
   describe('English Language', () => {
-    /*
+		/*
       👉 TASK 1
 
       One test is done for you as an example.
     */
-    test(`TEXT_HEADING_CREATE_ACCOUNT is visible`, () => {
-      render(<App lang="en" />)
-      expect(screen.getByText("Create an Account")).toBeVisible()
-    })
-  })
+		test(`TEXT_HEADING_CREATE_ACCOUNT is visible`, () => {
+      act(() => {
+				render(<App lang='en' />);
+			});
+				expect(
+					screen.getByText(info.en.TEXT_HEADING_CREATE_ACCOUNT)
+				).toBeVisible();
+		});
+
+		//     "TEXT_FAV_LANG_JS": "JavaScript"
+    test('TEXT_FAV_LANG_JS is visible', () => {
+      act(() => {
+				render(<App lang='en' />);
+			});
+      expect(screen.getByText(info.en.TEXT_FAV_LANG_JS)).toBeVisible();
+    });
+
+		//     "TEXT_FAV_LANG_RUST": "Rust",
+    test('TEXT_FAV_LANG_RUST is visible', () => {
+      act(() => {
+				render(<App lang='en' />);
+			});
+			expect(screen.getByText(info.en.TEXT_FAV_LANG_RUST)).toBeVisible();
+		});
+
+		//     "TEXT_OPT_FAV_FOOD_1": "-- Select favorite food --",
+    test('TEXT_OPT_FAV_FOOD_1 is visible', () => {
+      act(() => {
+				render(<App lang='en' />);
+			});
+			expect(screen.getByText(info.en.TEXT_OPT_FAV_FOOD_1)).toBeVisible();
+		});
+
+		//     "TEXT_OPT_FAV_FOOD_2": "Pizza",
+    test('TEXT_OPT_FAV_FOOD_2 is visible', () => {
+      act(() => {
+				render(<App lang='en' />);
+			});
+			expect(screen.getByText(info.en.TEXT_OPT_FAV_FOOD_2)).toBeVisible();
+		});
+
+		//     "TEXT_OPT_FAV_FOOD_3": "Spaghetti",
+    test('TEXT_OPT_FAV_FOOD_3 is visible', () => {
+      act(() => {
+				render(<App lang='en' />);
+			});
+			expect(screen.getByText(info.en.TEXT_OPT_FAV_FOOD_3)).toBeVisible();
+		});
+
+		//     "TEXT_OPT_FAV_FOOD_4": "Broccoli",
+    test('TEXT_OPT_FAV_FOOD_4 is visible', () => {
+      act(() => {
+				render(<App lang='en' />);
+			});
+			expect(screen.getByText(info.en.TEXT_OPT_FAV_FOOD_4)).toBeVisible();
+		});
+    
+		//     "TEXT_SUBMIT": "Send",
+    test('TEXT_SUBMIT is visible', () => {
+      act(() => {
+				render(<App lang='en' />);
+			});
+			expect(screen.getByText(info.en.TEXT_SUBMIT)).toBeVisible();
+		});
+    
+		//     "TEXT_FAV_LANG": "Favorite language:",
+    test('TEXT_FAV_LANG is visible', () => {
+      act(() => {
+				render(<App lang='en' />);
+			});
+			expect(screen.getByText(info.en.TEXT_FAV_LANG)).toBeVisible();
+		});
+
+		//     "LABEL_USERNAME": "Username:",
+    test('LABEL_USERNAME is correct', () => {
+      act(() => {
+				render(<App lang='en' />);
+			});
+			expect(screen.getByLabelText(info.en.LABEL_USERNAME)).toBeVisible();
+		});
+
+		//     "LABEL_FAV_FOOD": "Favorite food:",
+    test('LABEL_FAV_FOOD is correct', () => {
+      act(() => {
+				render(<App lang='en' />);
+			});
+			expect(screen.getByLabelText(info.en.LABEL_FAV_FOOD)).toBeVisible();
+		});
+
+		//     "LABEL_ACCEPT_TERMS": "Agree to our terms",
+    test('LABEL_ACCEPT_TERMS is visible', () => {
+      act(() => {
+				render(<App lang='en' />);
+			});
+			expect(screen.getByLabelText(info.en.LABEL_ACCEPT_TERMS)).toBeVisible();
+		});
+
+		//     "PLACEHOLDER_USERNAME": "Type username"
+    test('PLACEHOLDER_USERNAME is visible', () => {
+      act(() => {
+				render(<App lang='en' />);
+			});
+			expect(screen.getByPlaceholderText(info.en.PLACEHOLDER_USERNAME)).toBeVisible();
+		});    
+	})
+  // --------------------------------------------------------------------------------
   describe('Spanish Language', () => {
     /*
       👉 TASK 3
 
       This is done after making the UI multilingual.
     */
+		test(`TEXT_HEADING_CREATE_ACCOUNT is visible`, () => {
+      act(() => {
+				render(<App lang='esp' />);
+			});
+        expect(
+					screen.getByText(info.esp.TEXT_HEADING_CREATE_ACCOUNT)
+				).toBeVisible();
+		});
+
+		//     "TEXT_FAV_LANG_JS": "JavaScript"
+		test('TEXT_FAV_LANG_JS is visible', () => {
+      act(() => {
+				render(<App lang='esp' />);
+			});
+        expect(screen.getByText(info.esp.TEXT_FAV_LANG_JS)).toBeVisible();
+		});
+
+		//     "TEXT_FAV_LANG_RUST": "Rust",
+		test('TEXT_FAV_LANG_RUST is visible', () => {
+      act(() => {
+				render(<App lang='esp' />);
+			});
+			expect(screen.getByText(info.esp.TEXT_FAV_LANG_RUST)).toBeVisible();
+		});
+
+		//     "TEXT_OPT_FAV_FOOD_1": "-- Select favorite food --",
+		test('TEXT_OPT_FAV_FOOD_1 is visible', () => {
+      act(() => {
+				render(<App lang='esp' />);
+			});
+			expect(screen.getByText(info.esp.TEXT_OPT_FAV_FOOD_1)).toBeVisible();
+		});
+
+		//     "TEXT_OPT_FAV_FOOD_2": "Pizza",
+		test('TEXT_OPT_FAV_FOOD_2 is visible', () => {
+      act(() => {
+				render(<App lang='esp' />);
+			});
+			expect(screen.getByText(info.esp.TEXT_OPT_FAV_FOOD_2)).toBeVisible();
+		});
+
+		//     "TEXT_OPT_FAV_FOOD_3": "Spaghetti",
+		test('TEXT_OPT_FAV_FOOD_3 is visible', () => {
+      act(() => {
+				render(<App lang='esp' />);
+			});
+			expect(screen.getByText(info.esp.TEXT_OPT_FAV_FOOD_3)).toBeVisible();
+		});
+
+		//     "TEXT_OPT_FAV_FOOD_4": "Broccoli",
+		test('TEXT_OPT_FAV_FOOD_4 is visible', () => {
+      act(() => {
+				render(<App lang='esp' />);
+			});
+			expect(screen.getByText(info.esp.TEXT_OPT_FAV_FOOD_4)).toBeVisible();
+		});
+
+		//     "TEXT_SUBMIT": "Send",
+		test('TEXT_SUBMIT is visible', () => {
+      act(() => {
+				render(<App lang='esp' />);
+			});
+			expect(screen.getByText(info.esp.TEXT_SUBMIT)).toBeVisible();
+		});
+
+		//     "TEXT_FAV_LANG": "Favorite language:",
+		test('TEXT_FAV_LANG is visible', () => {
+      act(() => {
+				render(<App lang='esp' />);
+			});
+			expect(screen.getByText(info.esp.TEXT_FAV_LANG)).toBeVisible();
+		});
+
+		//     "LABEL_USERNAME": "Username:",
+		test('LABEL_USERNAME is correct', () => {
+      act(() => {
+				render(<App lang='esp' />);
+			});
+			expect(screen.getByLabelText(info.esp.LABEL_USERNAME)).toBeVisible();
+		});
+
+		//     "LABEL_FAV_FOOD": "Favorite food:",
+		test('LABEL_FAV_FOOD is correct', () => {
+      act(() => {
+				render(<App lang='esp' />);
+			});
+			expect(screen.getByLabelText(info.esp.LABEL_FAV_FOOD)).toBeVisible();
+		});
+
+		//     "LABEL_ACCEPT_TERMS": "Agree to our terms",
+		test('LABEL_ACCEPT_TERMS is visible', () => {
+      act(() => {
+				render(<App lang='esp' />);
+			});
+			expect(screen.getByLabelText(info.esp.LABEL_ACCEPT_TERMS)).toBeVisible();
+		});
+
+		//     "PLACEHOLDER_USERNAME": "Type username"
+		test('PLACEHOLDER_USERNAME is visible', () => {
+      act(() => {
+				render(<App lang='esp' />);
+			});
+				expect(
+					screen.getByPlaceholderText(info.esp.PLACEHOLDER_USERNAME)
+				).toBeVisible();
+		});  
+
   })
   describe('getEntriesByKeyPrefix', () => {
     test('can extract the correct data', () => {
